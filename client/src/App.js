@@ -1,9 +1,14 @@
-import "./App.css";
+import "./styles/index.scss";
+import Header from "./components/Header";
+import Search from "./components/Search";
+import Partners from "./components/Partners";
 
 function App() {
 	return (
 		<div className="App">
-			<header className="App-header"></header>
+			<Header />
+			<Search />
+			<Partners />
 		</div>
 	);
 }
