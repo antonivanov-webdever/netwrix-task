@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from "react";
+import { Select } from 'antd'
 import searchIcon from "../images/search-ico.svg";
 
 const Search = ({ type, setType }) => {
 	const [placeholder, setPlaceholder] = useState('');
+	const { Option } = Select;
 
 	const changePlaceholderText = (breakpoint) => {
 		if (breakpoint.matches) {
@@ -51,14 +53,14 @@ const Search = ({ type, setType }) => {
 						</form>
 						<div className="search-selects">
 							<div className="search-selects__item search-selects__item--single">
-								<select value={type} onChange={(event) => {setType(event.target.value)}} name="type">
-									<option value="Type">Type</option>
-									<option value="MSP Partner">MSP Partner</option>
-									<option value="Preferred Partner">Preferred Partner</option>
-									<option value="Premium Partner">Premium Partner</option>
-									<option value="Elite Partner">Elite Partner</option>
-									<option value="Distributor">Distributor</option>
-								</select>
+								<Select className="select" showArrow={false} defaultValue="Type" onChange={(value) => {setType(value)}}>
+									<Option value="Type">Type</Option>
+									<Option value="MSP Partner">MSP Partner</Option>
+									<Option value="Preferred Partner">Preferred Partner</Option>
+									<Option value="Premium Partner">Premium Partner</Option>
+									<Option value="Elite Partner">Elite Partner</Option>
+									<Option value="Distributor">Distributor</Option>
+								</Select>
 							</div>
 							<div className="search-selects__group">
 								<div className="search-selects__item">
